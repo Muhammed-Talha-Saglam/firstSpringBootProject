@@ -1,11 +1,13 @@
 package dev.bytecode.springboot.firstProject.firstProject.rest
 
+import dev.bytecode.springboot.firstProject.util.modals.Coach
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class FunRest {
+class FunRest @Autowired constructor(private val myCoach: Coach) {
 
     @Value("\${team.name}")
     private lateinit var teamName: String
@@ -17,7 +19,7 @@ class FunRest {
 
     @GetMapping("/workout")
     fun dailyWorkout(): String {
-        return "Run a hard 5k!"
+        return myCoach.getDailyWorkout()
     }
 
     @GetMapping("/fortune")
