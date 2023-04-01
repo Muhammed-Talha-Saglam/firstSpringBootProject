@@ -34,7 +34,7 @@ class FunRest @Autowired constructor(
 
     @GetMapping("/workout")
     fun dailyWorkout(): String {
-        return myCoach.getDailyWorkout()
+        return swimCoach.getDailyWorkout()
     }
 
     @GetMapping("/fortune")
