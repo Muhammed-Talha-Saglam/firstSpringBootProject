@@ -36,7 +36,9 @@ class FirstRunner(val studentDao: StudentDao) : CommandLineRunner {
 //		queryByLastName(studentDao)
 //		updateStudent(studentDao)
 //		deleteStudent(studentDao)
-		deleteAllStudents(studentDao)
+//		deleteAllStudents(studentDao)
+
+
 	}
 
 }
